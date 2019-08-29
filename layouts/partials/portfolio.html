@@ -6,8 +6,8 @@
             <div class="col-xl-12">
                 {{"<!-- section title -->" | safeHTML}}
                 <div class="title text-center">
-                    <h2> {{ with .Site.Data.portfolio.heading }} {{ . }} {{ end }} <span class="color">{{ with .Site.Data.portfolio.headingSpan }} {{ . }} {{ end }}</span></h2>
-                    <div class="border-meghna"></div>
+                    <h2> {{ with .Site.Data.portfolio.heading }} {{ . }} {{ end }} <span class="blue">{{ with .Site.Data.portfolio.headingSpan }} {{ . }} {{ end }}</span></h2>
+                    <div class="border-meghna blue"></div>
                 </div>
                 {{"<!-- /section title -->" | safeHTML}}
             </div>
@@ -32,8 +32,8 @@
                         <a class="search-icon image-popup" data-effect="mfp-with-zoom" href="{{ .image | absURL}}" data-lightbox="image-1">
                             <i class="{{ .icon }}"></i>
                         </a>
-                        <h4><a href="{{ .URL | absURL }}">{{ .title }}</a></h4>
-                        <p>{{ .description }}</p>
+                        <!-- <h4><a href="{{ .URL | absURL }}">{{ .title }}</a></h4> -->
+                        <!-- <p>{{ .description }}</p> -->
                     </div>
                 </div>
             </div>
