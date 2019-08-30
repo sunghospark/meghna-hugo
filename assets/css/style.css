@@ -12,13 +12,13 @@ Tags: one-page, single-page, portfolio, custom-colors, post-formats, responsive,
 
 html {
   background-color: #353b43;
-  color: #737f8a;
+  color: #BBBBBB;
 }
 
 body {
   background-color: #353b43;
   font-family: "Anaheim", sans-serif;
-  color: #737f8a;
+  color: #BBBBBB;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -36,7 +36,7 @@ h5,
 h6 {
   font-weight: 400;
   font-family: "Quattrocento Sans", sans-serif;
-  color: #afbac4;
+  color: #0093D5;
 }
 
 p {
@@ -536,7 +536,7 @@ a:hover {
 
 .navigation .navigation-menu li a {
   font-size: 16px;
-  color: #737f8a;
+  color: #BBBBBB;
   font-weight: bold;
 }
 
@@ -588,6 +588,7 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-position: center center;
 }
 
 .hero-area:before {
@@ -1011,7 +1012,7 @@ a:hover {
   font-size: 16px;
   padding: 6px 20px;
   font-weight: 700;
-  color: #737f8a;
+  color: #BBBBBB;
   transition: .3s all;
 }
 
@@ -1646,7 +1647,7 @@ a:hover {
 }
 
 .post-time {
-  color: #737f8a;
+  color: #BBBBBB;
 }
 
 input#e-mail, #hidden_iframe {
@@ -1701,13 +1702,11 @@ input#e-mail, #hidden_iframe {
 }
 
 .social-icon ul li a i {
-  color: #55606a;
+  color: #0093D5;
   display: inline-block;
   font-size: 32px;
   line-height: 70px;
   margin: 0;
-  opacity: 0.3;
-  filter: alpha(opacity=30);
   -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
   transition: all 400ms ease-out 0s;
