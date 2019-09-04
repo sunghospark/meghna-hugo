@@ -16,7 +16,7 @@
             {{"<!-- Contact Details -->" | safeHTML}}
             <div class="contact-info col-lg-6 wow fadeInUp" data-wow-duration="500ms">
                 {{ with .Site.Data.contact.title }}<h3>{{ . }}</h3> {{ end }}
-                {{ with .Site.Data.contact.content }} <p> {{ . }} </p> {{ end }}
+                {{ with .Site.Data.contact.content }} <p> {{ . | safeHTML}} </p> {{ end }}
                 <div class="contact-details">
                     {{ range .Site.Data.contact.contactDetails }}
                     <div class="con-info clearfix">
