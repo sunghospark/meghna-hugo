@@ -6,7 +6,11 @@
             {{ range .Site.Params.counter.counterItem }}
             <div class="col-lg-3 col-md-6 col-12 text-center wow fadeInDown" data-wow-duration="500ms">
                 <div class="counters-item">
+                    {{ if .stars }}
+                    <i class="{{ .icon }}"></i><i class="{{ .icon }}"></i><i class="{{ .icon }}"></i><i class="{{ .icon }}"></i><i class="{{ .icon }}"></i>
+                    {{ else }}
                     <i class="{{ .icon }}"></i>
+                    {{ end }}
                     <span data-speed="3000" data-to="{{ .count }}">{{ .count }}</span>
                     <h3>{{ .title }}</h3>
                 </div>

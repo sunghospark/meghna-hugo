@@ -11,10 +11,11 @@
                 </div>
             </div>
             {{"<!-- /section title -->" | safeHTML}}
-
+            <div class="col-lg-3 col-3 padding-0">
+            </div>
             {{ range .Site.Data.team.teamMember}}
             {{"<!-- team member -->" | safeHTML}}
-            <div class="col-lg-3 col-md-6 col-12 wow fadeInDown" data-wow-duration="500ms">
+            <div class="col-lg-6 col-md-6 col-12 wow fadeInDown" data-wow-duration="500ms">
                 <div class="team-member">
                     <div class="member-photo">
                         {{"<!-- member photo -->" | safeHTML}}
@@ -34,7 +35,7 @@
                     <div class="member-meta">
                         <h4>{{ .name }}</h4>
                         <span>{{ .designation }}</span>
-                        <p>{{ .description }}</p>
+                        <p>{{ .description |safeHTML }}</p>
                     </div>
                 </div>
             </div>
