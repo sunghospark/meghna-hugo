@@ -1,33 +1,20 @@
+/* ========================================================================= */
+/*	Page Preloader
+/* ========================================================================= */
+
+$(window).on('load', function () {
+	$('.preloader').fadeOut(100);
+});
+
 jQuery(function ($) {
 	"use strict";
 
 	/* ========================================================================= */
-	/*	Page Preloader
+	/*	lazy load initialize
 	/* ========================================================================= */
 
-	// Preloader js
-	$(window).on('load', function () {
-		$('#preloader').fadeOut(700);
-	});
-
-	/* ========================================================================= */
-	/*	Post image slider
-	/* ========================================================================= */
-
-	$("#post-thumb, #gallery-post").slick({
-		infinite: true,
-		arrows: false,
-		autoplay: true,
-		autoplaySpeed: 4000
-
-	});
-
-	$("#features").slick({
-		infinite: true,
-		arrows: false,
-		autoplay: true,
-		autoplaySpeed: 4000
-	});
+	const observer = lozad(); // lazy loads elements with default selector as ".lozad"
+	observer.observe();
 
 	/* ========================================================================= */
 	/*	Magnific popup
@@ -47,16 +34,31 @@ jQuery(function ($) {
 		fixedContentPos: false,
 		fixedBgPos: true
 	});
+
 	/* ========================================================================= */
 	/*	Portfolio Filtering Hook
 	/* =========================================================================  */
 
-	var filterizd = $('.filtr-container').filterizr({});
+	var containerEl = document.querySelector('.shuffle-wrapper');
+	if (containerEl) {
+		var Shuffle = window.Shuffle;
+		var myShuffle = new Shuffle(document.querySelector('.shuffle-wrapper'), {
+			itemSelector: '.shuffle-item',
+			buffer: 1
+		});
+
+		jQuery('input[name="shuffle-filter"]').on('change', function (evt) {
+			var input = evt.currentTarget;
+			if (input.checked) {
+				myShuffle.filter(input.value);
+			}
+		});
+	}
+
 	/* ========================================================================= */
 	/*	Testimonial Carousel
 	/* =========================================================================  */
 
-	//Init the carousel
 	$("#testimonials").slick({
 		infinite: true,
 		arrows: false,
@@ -176,51 +178,72 @@ function initialize() {
 		draggable: false,
 		mapTypeControlOptions: {
 			mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'roadatlas']
-		}
-	};
 
-	var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+	/* ========================================================================= */
+	/*	animation scroll js
+	/* ========================================================================= */
 
-
-	var marker = new google.maps.Marker({
-		position: myLatLng,
-		map: map,
-		title: '',
-	});
-
-
-	google.maps.event.addListener(marker, 'click', function () {
-		infowindow.open(map, marker);
-	});
-
-	var styledMapOptions = {
-		name: 'US Road Atlas'
-	};
-
-	var usRoadMapType = new google.maps.StyledMapType(
-		roadAtlasStyles, styledMapOptions);
-
-	map.mapTypes.set('roadatlas', usRoadMapType);
-	map.setMapTypeId('roadatlas');
-}
-
-google.maps.event.addDomListener(window, "load", initialize);
-
-/* ========================================================================= */
-/*	Staticman comments reply
-/* ========================================================================= */
-function changeValue(elementName, newValue) {
-	document.getElementsByName(elementName)[0].value = newValue;
-};
-
-/* ========================================================================= */
-/*	Honeypot
-/* ========================================================================= */
-$(document).ready(function () {
-	$('form').submit(function () {
-		if ($('input[type="text"]#e-mail').val().length > 0) {
-			$('form').attr('action', '/');
-			return false;
+	var html_body = $('html, body');
+	$('nav a, .page-scroll').on('click', function () { //use page-scroll class in any HTML tag for scrolling
+		if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
+			var target = $(this.hash);
+			target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+			if (target.length) {
+				html_body.animate({
+					scrollTop: target.offset().top - 50
+				}, 1500, 'easeInOutExpo');
+				return false;
+			}
 		}
 	});
+
+	// easeInOutExpo Declaration
+	jQuery.extend(jQuery.easing, {
+		easeInOutExpo: function (x, t, b, c, d) {
+			if (t === 0) {
+				return b;
+			}
+			if (t === d) {
+				return b + c;
+			}
+			if ((t /= d / 2) < 1) {
+				return c / 2 * Math.pow(2, 10 * (t - 1)) + b;
+			}
+			return c / 2 * (-Math.pow(2, -10 * --t) + 2) + b;
+		}
+	});
+
+	/* ========================================================================= */
+	/*	counter up
+	/* ========================================================================= */
+	function counter() {
+		var oTop;
+		if ($('.count').length !== 0) {
+			oTop = $('.count').offset().top - window.innerHeight;
+		}
+		if ($(window).scrollTop() > oTop) {
+			$('.count').each(function () {
+				var $this = $(this),
+					countTo = $this.attr('data-count');
+				$({
+					countNum: $this.text()
+				}).animate({
+					countNum: countTo
+				}, {
+					duration: 1000,
+					easing: 'swing',
+					step: function () {
+						$this.text(Math.floor(this.countNum));
+					},
+					complete: function () {
+						$this.text(this.countNum);
+					}
+				});
+			});
+		}
+	}
+	$(window).on('scroll', function () {
+		counter();
+	});
+
 });
