@@ -1,3 +1,37 @@
+/* custom */
+/* About page title */
+/* .ddd {
+  font-size: 1.72rem;
+}
+
+.navi-link {
+  color: #0093D5;
+}
+
+.service-icon {
+  color: #F7941D;
+}
+
+.service-block h3 {
+  color: #0093D5;
+}
+
+.service-block p {
+  color: #DDDDDD
+}
+
+.blue {
+  color: #0093D5 !important; 
+}
+
+.orange {
+  color: #F7941D; !important;
+}
+
+.border-meghna.blue:before {
+background-color: #0093D5;
+} */
+
 /*
 Template Name: Meghna Responsive HTML5/CSS3 Business Template
 Author: Themefisher
@@ -88,7 +122,7 @@ a:hover {
 
 a:focus,
 a:hover {
-  color: #6CB670;
+  color: #0093D5;
 }
 
 .kill-margin-bottom {
@@ -147,7 +181,7 @@ a:hover {
 }
 
 .color {
-  color: #6CB670;
+  color: #0093D5;
 }
 
 .sub-title {
@@ -503,6 +537,13 @@ a:hover {
 /*=================================================================
   Navigation
 ==================================================================*/
+.navbar-dark .navbar-nav .active>.nav-link,
+.navbar-dark .navbar-nav .nav-link.active,
+.navbar-dark .navbar-nav .nav-link.show,
+.navbar-dark .navbar-nav .show>.nav-link {
+  color: #F7941D;
+}
+
 .navigation {
   background-color: #1d2024;
   width: 100%;
@@ -524,8 +565,8 @@ a:hover {
   font-weight: bold;
 }
 
-.navigation .navigation-menu li a:hover,
-.navigation .navigation-menu li a:focus {
+.navbar-dark .navbar-nav .nav-link li a:hover,
+.navbar-dark .navbar-nav .nav-link li a:focus {
   background: transparent;
   color: #0093D5;
   font-weight: bold;
@@ -577,7 +618,7 @@ a:hover {
 
 .hero-area:before {
   content: '';
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.23);
   position: absolute;
   top: 0;
   right: 0;
@@ -690,13 +731,52 @@ a:hover {
   border-bottom: 2px solid #F7941D;
 }
 
+.about .block:hover .icon-box {
+  -webkit-transform: translateY(-10px);
+  transform: translateY(-10px);
+}
+
 .about .block .icon-box {
   position: relative;
-  width: 140px;
-  height: 110px;
+  width: 160px;
+  height: 92.38px;
   background-color: transparent;
-  margin: 10px auto 60px;
+  margin: 46.19px auto 60px;
+  padding: 20px 0;
+  border-left: 2px solid rgba(236, 239, 241, 0.07);
+  border-right: 2px solid rgba(236, 239, 241, 0.07);
+  font-size: 50px;
   -webkit-transform: translateZ(0px);
+  transform: translateZ(0px);
+  transition-duration: 0.3s;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+}
+
+.about .block .icon-box:after,
+.about .block .icon-box:before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 113.14px;
+  height: 113.14px;
+  background-color: inherit;
+  left: 20.4315px;
+  -webkit-transform: scaleY(0.5774) rotate(-45deg);
+  transform: scaleY(0.5774) rotate(-45deg);
+}
+
+.about .block .icon-box:before {
+  top: -56.5685px;
+  border-top: 2px solid rgba(236, 239, 241, 0.07);
+  border-right: 2px solid rgba(236, 239, 241, 0.07);
+}
+
+.about .block .icon-box:after {
+  bottom: -56.5685px;
+  border-bottom: 2px solid rgba(236, 239, 241, 0.07);
+  border-left: 2px solid rgba(236, 239, 241, 0.07);
 }
 
 .about .block .icon-box h3 {
@@ -843,7 +923,7 @@ a:hover {
 }
 
 .success {
-  background-color: #6cb670;
+  background-color: #0093D5;
   border-radius: 4px;
   color: #fff;
   display: none;
@@ -954,17 +1034,12 @@ a:hover {
   font-size: 16px;
   padding: 6px 20px;
   font-weight: 700;
-  color: #BBBBBB;
+  color: #737f8a;
   transition: .3s all;
 }
 
-.portfolio-filter button.mixitup-control-active {
-  border: 1px solid #F7941D;
-  color: #F7941D;
-}
-
-.portfolio-items-wrapper .mix {
-  padding: 5px;
+.portfolio-filter .btn.active {
+  border-color: #0093D5;
 }
 
 .portfolio-block {
@@ -973,7 +1048,7 @@ a:hover {
 
 .portfolio-block:before {
   transition: all 0.3s ease-in-out;
-  /* background: white; */
+  background: white;
   opacity: 0;
   top: 20px;
   right: 20px;
@@ -1023,7 +1098,7 @@ a:hover {
 }
 
 .portfolio-block .caption .search-icon {
-  background: #F7941D;
+  background: #0093D5;
   width: 50px;
   height: 50px;
   color: #fff;
@@ -1154,7 +1229,7 @@ a:hover {
 }
 
 .member-photo .mask {
-  background-color: rgba(87, 203, 204, 0.7);
+  background-color: rgba(0, 147, 213, 0.7);
   position: absolute;
   text-align: center;
   height: 100%;
@@ -1644,7 +1719,7 @@ input#e-mail,
 }
 
 .social-icon ul li a:hover {
-  background: #57cbcc;
+  background: #F7941D;
 }
 
 .social-icon ul li a:hover i {
@@ -1697,9 +1772,9 @@ input#e-mail,
 ==================================================================*/
 
 .twitter-bird span {
-  border: 2px solid #6cb670;
+  border: 2px solid #0093D5;
   border-radius: 50px;
-  color: #6cb670;
+  color: #0093D5;
   display: inline-block;
   margin-bottom: 50px;
   height: 90px;
@@ -1715,7 +1790,7 @@ input#e-mail,
 }
 
 .tweet a {
-  color: #6cb670;
+  color: #0093D5;
 }
 
 /*=================================================================
@@ -1727,9 +1802,9 @@ input#e-mail,
 }
 
 .blog-icon {
-  border: 1px solid #6CB670;
+  border: 1px solid #0093D5;
   border-radius: 50%;
-  color: #6CB670;
+  color: #0093D5;
   display: inline-block;
   padding: 16px 20px;
 }
@@ -1815,7 +1890,7 @@ input#e-mail,
 }
 
 .post-meta a:hover {
-  color: #6CB670;
+  color: #0093D5;
 }
 
 .post-excerpt .more {
@@ -1829,7 +1904,7 @@ input#e-mail,
 }
 
 .post-excerpt .more a:hover {
-  background-color: #6CB670;
+  background-color: #0093D5;
   color: #fff;
 }
 
@@ -1877,9 +1952,9 @@ aside.widget {
 }
 
 .tab-post-nav li.active a {
-  border-top: 3px solid #6cb670;
+  border-top: 3px solid #0093D5;
   background-color: #2F383D;
-  color: #6CB670;
+  color: #0093D5;
 }
 
 .tab-pane.active .clearfix:first-child {
@@ -1897,7 +1972,7 @@ aside.widget {
 }
 
 .tab-excerpt h4 a:hover {
-  color: #6cb670;
+  color: #0093D5;
 }
 
 .tab-post-nav li a {
@@ -1915,7 +1990,7 @@ aside.widget {
 
 .categories>li:hover a {
   padding-left: 10px;
-  color: #6CB670;
+  color: #0093D5;
 }
 
 .categories>li:last-child {
@@ -1936,7 +2011,7 @@ aside.widget {
 }
 
 .widget-content .tag:hover {
-  background-color: #6CB670;
+  background-color: #0093D5;
   color: #fff;
 }
 
@@ -1972,7 +2047,7 @@ aside.widget {
 
 .post-pagination ul li a:hover,
 .post-pagination ul li.active a {
-  background-color: #6CB670;
+  background-color: #0093D5;
   color: #fff;
 }
 
@@ -1986,7 +2061,7 @@ aside.widget {
 }
 
 blockquote {
-  border-left: 5px solid #6cb670;
+  border-left: 5px solid #0093D5;
   font-style: italic;
   line-height: 22px;
   padding: 20px 20px 10px 20px;
@@ -2001,7 +2076,7 @@ blockquote {
 }
 
 .next-prev a:hover {
-  color: #6CB670;
+  color: #0093D5;
 }
 
 .prev-post i {
@@ -2073,7 +2148,7 @@ blockquote {
 
 .author-comment cite a:hover,
 .replay:hover {
-  color: #6CB670;
+  color: #0093D5;
   text-decoration: underline;
 }
 
@@ -2099,7 +2174,7 @@ blockquote {
 }
 
 #comment-form .form-control:hover {
-  border-color: #6CB670;
+  border-color: #0093D5;
 }
 
 .form-group:last-child,
