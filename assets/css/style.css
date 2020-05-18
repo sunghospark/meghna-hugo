@@ -155,7 +155,7 @@ a:hover {
 
 .btn-transparent:hover,
 .btn-transparent:focus {
-  background-color: #F7941D;
+  background-color: #0093D5;
   border: 1px solid transparent;
   color: #fff;
 }
@@ -618,7 +618,7 @@ a:hover {
 
 .hero-area:before {
   content: '';
-  background: rgba(0, 0, 0, 0.23);
+  background: rgba(0, 0, 0, 0.13);
   position: absolute;
   top: 0;
   right: 0;
